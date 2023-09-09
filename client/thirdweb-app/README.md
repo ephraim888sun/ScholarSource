@@ -1,3 +1,7 @@
+## Project Overview
+
+ScholarSource is a cutting-edge solution in the field of education technology. It uses next-generation blockchain contracts (with the hope of later supporting zero-knowledge proofs through Aleo) to ensure security when crowdfunding educational scholarhips for underserved students across the world. While our product is still in its early stages, ScholarSource promises an exciting new educational future for those who need it most.
+
 ## Getting Started
 
 Create a project using this example:

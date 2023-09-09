@@ -39,6 +39,7 @@ To learn more about thirdweb and Next.js, take a look at the following resources
 
 You can check out [the thirdweb GitHub organization](https://github.com/thirdweb-dev) - your feedback and contributions are welcome!
 
-## Join our Discord!
+## Aleo Tokens
 
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
+In future iterations of our app we wish to support zero-knowledge blockchain technology with the power of Aleo. A demo of this mechanism is included in the leo_token folder, which can be deployed by running 'bash ./deploy.sh' from the command line. Aleo technology is still in very early stages so we have not yet been able to integrate it with our frontend system; however, the app could
+eventually support more secure transactions by using transfers of Aleo tokens rather than Solidity contracts when funding grants.

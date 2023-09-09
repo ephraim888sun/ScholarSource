@@ -1,6 +1,7 @@
 import { ConnectWallet } from "@thirdweb-dev/react";
 import Link from 'next/link'
 import Sidebar from '../components/sidebar'
+import Navbar from '../components/navbar'
 
 export default function Home() {
   return (
@@ -10,11 +11,7 @@ export default function Home() {
       </div>
 
       <div className='flex-1 max-sm:w-full max-w-[1280px] mx-auto sm:pr-5'>
-        {/* <Navbar /> */}Navbar
-        {/* <Link path='/' element={<Home />} />
-        <Link path='/profile' element={<Profile />} />
-        <Link path='/create-campaign' element={<CreateCampaign />} />
-        <Link path='/campaign-details/:id' element={<CampaignDetails />} /> */}
+        <Navbar />
       </div>
     </div>
   )

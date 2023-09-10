@@ -13,15 +13,15 @@ import Loader from './Loader'
 const CreateGrant = () => {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
-const { CreateGrant } = useStateContext()
-const [form, setForm] = useState({
-  name: '',
-  title: '',
-  description: '',
-  target: '',
-  deadline: '',
-  image: '',
-})
+  const { createGrant } = useStateContext()
+  const [form, setForm] = useState({
+    name: '',
+    title: '',
+    description: '',
+    target: '',
+    deadline: '',
+    image: '',
+  })
 
 const handleFormFieldChange = (fieldName, e) => {
   setForm({ ...form, [fieldName]: e.target.value })
@@ -33,7 +33,7 @@ const handleSubmit = async (e) => {
   checkIfImage(form.image, async (exists) => {
     if (exists) {
       setIsLoading(true)
-      await CreateGrant({
+      await createGrant({
         ...form,
         target: ethers.utils.parseUnits(form.target, 18),
       })

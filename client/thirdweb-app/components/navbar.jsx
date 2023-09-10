@@ -7,6 +7,7 @@ import { useStateContext } from '../context'
 import CustomButton from './CustomButton'
 import { logo, menu, search, thirdweb } from '../public'
 import { navlinks } from '../constants'
+import { ConnectWallet } from '@thirdweb-dev/react'
 
 const Navbar = () => {
   const router = useRouter()
@@ -31,17 +32,16 @@ const Navbar = () => {
           />
         </div>
       </div>
-
       <div className='sm:flex hidden flex-row justify-end gap-4'>
         <CustomButton
           btnType='button'
-          title={address ? 'Create a grant' : 'Connect'}
-          styles={address ? 'bg-[#1dc071]' : 'bg-[#8c6dfd]'}
+          title={address ? 'Create a grant' : ''}
+          styles={address ? 'bg-[#1dc071]' : ''}
           handleClick={() => {
             if (address) router.push('create-grant')
-            else connect()
           }}
         />
+        <ConnectWallet theme='light' btnTitle='Connect Wallet' />
 
         <Link href='/profile'>
           <div className='w-[52px] h-[52px] rounded-full bg-[#2c2f32] flex justify-center items-center cursor-pointer'>
@@ -53,7 +53,6 @@ const Navbar = () => {
           </div>
         </Link>
       </div>
-
       {/* Small screen navigation */}
       <div className='sm:hidden flex justify-between items-center relative'>
         <div className='w-[40px] h-[40px] rounded-[10px] bg-[#2c2f32] flex justify-center items-center cursor-pointer'>
@@ -110,13 +109,13 @@ const Navbar = () => {
           <div className='flex mx-4'>
             <CustomButton
               btnType='button'
-              title={address ? 'Create a grant' : 'Connect'}
-              styles={address ? 'bg-[#1dc071]' : 'bg-[#8c6dfd]'}
+              title={address ? 'Create a grant' : ''}
+              styles={address ? 'bg-[#1dc071]' : ''}
               handleClick={() => {
                 if (address) router.push('create-grant')
-                else connect()
               }}
             />
+            <ConnectWallet theme='dark' btnTitle='Connect Wallet' />
           </div>
         </div>
       </div>

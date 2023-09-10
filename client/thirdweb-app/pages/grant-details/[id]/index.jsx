@@ -8,21 +8,17 @@ import { thirdweb } from '../../../public'
 import CountBox from '../../../components/countBox'
 import CustomButton from '../../../components/CustomButton'
 import Image from 'next/image'
+import Loader from '../../../components/loader'
 
 const index = () => {
   const router = useRouter()
-
   const grant = router.query
 
-  if (!grant) return null
-  console.log(router)
   const { sponsor, getSponsors, contract, address } = useStateContext()
 
   const [isLoading, setIsLoading] = useState(false)
   const [amount, setAmount] = useState('')
   const [sponsors, setSponsors] = useState([])
-
-  const remainingDays = daysLeft(grant.deadline)
 
   const fetchSponsors = async () => {
     const data = await getSponsors(grant.pId)
@@ -71,7 +67,7 @@ const index = () => {
         </div>
 
         <div className='flex md:w-[150px] w-full flex-wrap justify-between gap-[30px]'>
-          <CountBox title='Days Left' value={remainingDays} />
+          <CountBox title='Days Left' value={grant.remainingDays} />
           <CountBox
             title={`Raised of ${grant.target}`}
             value={grant.amountCollected}
@@ -89,10 +85,12 @@ const index = () => {
 
             <div className='mt-[20px] flex flex-row items-center flex-wrap gap-[14px]'>
               <div className='w-[52px] h-[52px] flex items-center justify-center rounded-full bg-[#2c2f32] cursor-pointer'>
-                <img
+                <Image
                   src={thirdweb}
                   alt='user'
                   className='w-[60%] h-[60%] object-contain'
+                  width={500}
+                  height={500}
                 />
               </div>
               <div>

@@ -8,6 +8,7 @@ import {
 } from '@thirdweb-dev/react'
 
 import { ethers } from 'ethers'
+import { daysLeft } from '../utils'
 
 const StateContext = createContext()
 
@@ -53,7 +54,7 @@ export const StateContextProvider = ({ children }) => {
       pId: i,
     }))
 
-    return parsedGrants
+    return parsedGrants.filter((obj) => daysLeft(obj.deadline) > 0)
   }
 
   const getUserGrants = async () => {

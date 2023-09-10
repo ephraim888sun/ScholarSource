@@ -4,6 +4,7 @@ import FundCard from './FundCard';
 import { loader } from '../public'
 import { v4 as uuidv4 } from 'uuid'
 import Link from 'next/link'
+import { daysLeft } from '../utils'
 
 const DisplayGrants = ({ title, isLoading, grants }) => {
   return (
@@ -36,26 +37,18 @@ const DisplayGrants = ({ title, isLoading, grants }) => {
 
         {!isLoading &&
           grants.length > 0 &&
-          grants.map((grant) => (
-            <Link
-              href={{
-                pathname: `/grant-details/${grant.title}`,
-                query: { ...grant },
-              }}
-            >
-              <FundCard
-                key={uuidv4()}
-                {...grant}
-                handelClick={(e) => {
-                  e.preventDefault()
-                  // router.push({
-                  //   pathname: `/grant-details/${grant.title}`,
-                  //   query: { ...grant },
-                  // })
+          grants
+            .sort((a, b) => daysLeft(a.deadline) - daysLeft(b.deadline))
+            .map((grant) => (
+              <Link
+                href={{
+                  pathname: `/grant-details/${grant.pId}`,
+                  query: { ...grant, remainingDays: daysLeft(grant.deadline) },
                 }}
-              />
-            </Link>
-          ))}
+              >
+                <FundCard key={uuidv4()} {...grant} />
+              </Link>
+            ))}
       </div>
     </div>
   )

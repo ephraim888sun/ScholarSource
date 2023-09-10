@@ -1675,7 +1675,7 @@
     mime "3.0.0"
     tiny-invariant "^1.2.0"
 
-"@thirdweb-dev/react@^3":
+"@thirdweb-dev/react@^3.14.40":
   version "3.14.40"
   resolved "https://registry.npmjs.org/@thirdweb-dev/react/-/react-3.14.40.tgz"
   integrity sha512-BfuFkkb2ZnwVlNwHQypgpDsFUyiEvGMbTDPqx6yk4YnAp8rOSP4oR+R4b2Z/iKPRUjuED01LN33KUIIKXrQ1fg==
@@ -1702,7 +1702,7 @@
     react-qr-code "^2.0.11"
     tiny-invariant "^1.2.0"
 
-"@thirdweb-dev/sdk@^3", "@thirdweb-dev/sdk@^3.10.59", "@thirdweb-dev/sdk@3.10.59":
+"@thirdweb-dev/sdk@^3.10.59", "@thirdweb-dev/sdk@3.10.59":
   version "3.10.59"
   resolved "https://registry.npmjs.org/@thirdweb-dev/sdk/-/sdk-3.10.59.tgz"
   integrity sha512-uDGc2yavYRiXP1+etUaDNLJdzaTSFRPQNoKNqzbR1HMHMHb/KHHPXHKO50AuKpc5pMw8/f+OmCphF0qTMTZu1Q==

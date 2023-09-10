@@ -8,8 +8,7 @@ const DisplayGrants = ({ title, isLoading, grants }) => {
     const router = useRouter();
 
     const handleRouter = (grant) => { 
-        route(` /grant-details/${grant.title}`, { state: 
-        grant })
+        route(`/grant-details/${grant.title}`, { state: grant })
     }
 
     return (

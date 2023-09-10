@@ -37,7 +37,7 @@ module.exports = {
     networks: {
       hardhat: {},
       goerli: {
-        url: 'https://rpc.ankr.com/eth_goerli',
+        url: 'https://goerli.rpc.thirdweb.com',
         accounts: [`0x${process.env.PRIVATE_KEY}`],
       },
     },

@@ -7,6 +7,7 @@ import Icon from './icon'
 import { logo, sun } from '../public'
 import { navlinks } from '../constants'
 import LogoIcon from './logoIcon'
+import Logout from './Logout'
 
 const Sidebar = () => {
   const router = useRouter()
@@ -33,6 +34,8 @@ const Sidebar = () => {
               }}
             />
           ))}
+
+          <Logout isActive={isActive} />
         </div>
 
         <Icon styles='bg-[#1c1c24] shadow-secondary' imgUrl={sun} />

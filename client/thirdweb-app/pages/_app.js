@@ -13,6 +13,10 @@ function MyApp({ Component, pageProps }) {
       activeChain='goerli'
       desiredChainId={ChainId.Goerli}
       clientId={process.env.NEXT_PUBLIC_TEMPLATE_CLIENT_ID}
+      authConfig={{
+        domain: process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN || '',
+        authUrl: '/api/auth',
+      }}
     >
       <StateContextProvider>
         <Layout>

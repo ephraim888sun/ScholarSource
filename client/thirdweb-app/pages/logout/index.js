@@ -1,13 +1,11 @@
-import { useLogout } from '@thirdweb-dev/react'
+import { useDisconnect } from '@thirdweb-dev/react'
+import { useRouter } from 'next/router'
 
 const index = () => {
-  const { logout, isLoading } = useLogout()
+  const disconnect = useDisconnect()
+  const router = useRouter()
 
-  return (
-    <button onClick={() => logout()}>
-      {isLoading ? 'Logging out...' : 'Logout'}
-    </button>
-  )
+  return <div></div>
 }
 
 export default index

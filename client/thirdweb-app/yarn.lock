@@ -1617,7 +1617,7 @@
     "@tanstack/query-core" "4.35.0"
     use-sync-external-store "^1.2.0"
 
-"@thirdweb-dev/auth@3.2.40":
+"@thirdweb-dev/auth@^3.2.40", "@thirdweb-dev/auth@3.2.40":
   version "3.2.40"
   resolved "https://registry.npmjs.org/@thirdweb-dev/auth/-/auth-3.2.40.tgz"
   integrity sha512-nDvZAMp3geACL/Lv15d6/eyN3gfo677C1bnxVKhGzdxNzaCnoP6vFuXLwl/nP2m7KTGUgcXYjQFWtCBZLl1Pmg==

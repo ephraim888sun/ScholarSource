@@ -1,5 +1,6 @@
 import React from 'react'
 
+import FundCard from './FundCard';
 import { loader } from '../public';
 import { useRouter } from 'next/navigation';
 

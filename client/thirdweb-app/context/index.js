@@ -7,12 +7,11 @@ import {
   useContractWrite,
 } from '@thirdweb-dev/react'
 import { ethers } from 'ethers'
-import { EditionMetadataWithOwnerOutputSchema } from '@thirdweb-dev/sdk'
 
 const StateContext = createContext()
 
 export const StateContextProvider = ({ children }) => {
-  const { contract } = useContract('0xf59A1f8251864e1c5a6bD64020e3569be27e6AA9')
+  const { contract } = useContract('0x521aAbA6c415E3Bc551cB021c5CDd29F2a267b35')
   const { mutateAsync: createGrant } = useContractWrite(contract, 'createGrant')
 
   const address = useAddress()

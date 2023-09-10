@@ -13,7 +13,7 @@ import Loader from './Loader'
 const CreateGrant = () => {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
-  //   const { CreateGrant } = useStateContext()
+  const { createGrant } = useStateContext()
   const [form, setForm] = useState({
     name: '',
     title: '',
@@ -23,28 +23,28 @@ const CreateGrant = () => {
     image: '',
   })
 
-  const handleFormFieldChange = (fieldName, e) => {
-    setForm({ ...form, [fieldName]: e.target.value })
-  }
+const handleFormFieldChange = (fieldName, e) => {
+  setForm({ ...form, [fieldName]: e.target.value })
+}
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+const handleSubmit = async (e) => {
+  e.preventDefault()
 
-    checkIfImage(form.image, async (exists) => {
-      if (exists) {
-        setIsLoading(true)
-        // await CreateGrant({ // TODO
-        //   ...form,
-        //   target: ethers.utils.parseUnits(form.target, 18),
-        // })
-        setIsLoading(false)
-        router.push('/')
-      } else {
-        alert('Provide valid image URL')
-        setForm({ ...form, image: '' })
-      }
-    })
-  }
+  checkIfImage(form.image, async (exists) => {
+    if (exists) {
+      setIsLoading(true)
+      await createGrant({
+        ...form,
+        target: ethers.utils.parseUnits(form.target, 18),
+      })
+      setIsLoading(false)
+      router.push('/')
+    } else {
+      alert('Provide valid image URL')
+      setForm({ ...form, image: '' })
+    }
+  })
+}
 
   return (
     <div className='bg-[#1c1c24] flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4'>

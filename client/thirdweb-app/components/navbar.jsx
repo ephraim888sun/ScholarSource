@@ -12,8 +12,8 @@ const Navbar = () => {
   const router = useRouter()
   const [isActive, setIsActive] = useState('dashboard')
   const [toggleDrawer, setToggleDrawer] = useState(false)
-  const address = true
-  //   const { connect, address } = useStateContext()
+  const { connect, address } = useStateContext()
+
   return (
     <div className='flex md:flex-row flex-col-reverse justify-between mb-[35px] gap-6'>
       <div className='lg:flex-1 flex flex-row max-w-[458px] py-2 pl-4 pr-2 h-[52px] bg-[#1c1c24] rounded-[100px]'>
@@ -39,7 +39,7 @@ const Navbar = () => {
           styles={address ? 'bg-[#1dc071]' : 'bg-[#8c6dfd]'}
           handleClick={() => {
             if (address) router.push('create-grant')
-            else 'connect()' //TODO
+            else connect()
           }}
         />
 
@@ -114,7 +114,7 @@ const Navbar = () => {
               styles={address ? 'bg-[#1dc071]' : 'bg-[#8c6dfd]'}
               handleClick={() => {
                 if (address) router.push('create-grant')
-                else 'connect' // TODO
+                else connect()
               }}
             />
           </div>

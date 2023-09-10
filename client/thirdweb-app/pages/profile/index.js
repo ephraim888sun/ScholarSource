@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react'
 
-import { useStateContext } from '../context'
-import DisplayGrants from '../components/DisplayGrants'
+import { useStateContext } from '../../context'
+import DisplayGrants from '../../components/DisplayGrants'
 
-const index = () => {
+export default function Profile() {
   const [isLoading, setIsLoading] = useState(false)
   const [grants, setGrants] = useState([])
 
-  const { address, contract, getGrants } = useStateContext()
+  const { address, contract, getUserGrants } = useStateContext()
 
   const fetchGrants = async () => {
     setIsLoading(true)
-    const data = await getGrants()
+    const data = await getUserGrants()
     setGrants(data)
     setIsLoading(false)
   }
@@ -24,5 +24,3 @@ const index = () => {
     <DisplayGrants title='All Grants' isLoading={isLoading} grants={grants} />
   )
 }
-
-export default index

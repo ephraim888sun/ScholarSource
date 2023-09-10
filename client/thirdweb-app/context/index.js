@@ -64,7 +64,7 @@ export const StateContextProvider = ({ children }) => {
     return filteredGrants
   }
 
-  const donate = async (pId, amount) => {
+  const sponsor = async (pId, amount) => {
     const data = await contract.call('sponsorGrant', [pId], {
       value: ethers.utils.parseEther(amount),
     })
@@ -97,7 +97,7 @@ export const StateContextProvider = ({ children }) => {
         createGrant: publishGrant,
         getGrants,
         getUserGrants,
-        donate,
+        sponsor,
         getSponsors,
       }}
     >

@@ -1,17 +1,11 @@
 import React from 'react'
 
 import FundCard from './FundCard';
-import { loader } from '../public';
-import { useRouter } from 'next/navigation';
+import { loader } from '../public'
 import { v4 as uuidv4 } from 'uuid'
+import Link from 'next/link'
 
 const DisplayGrants = ({ title, isLoading, grants }) => {
-  const router = useRouter()
-
-  const handleRouter = (grant) => {
-    route(`/grant-details/${grant.title}`, { state: grant })
-  }
-
   return (
     <div>
       <h1
@@ -43,11 +37,24 @@ const DisplayGrants = ({ title, isLoading, grants }) => {
         {!isLoading &&
           grants.length > 0 &&
           grants.map((grant) => (
-            <FundCard
-              key={uuidv4()}
-              {...grant}
-              handelClick={() => handleRouter(grant)}
-            />
+            <Link
+              href={{
+                pathname: `/grant-details/${grant.title}`,
+                query: { ...grant },
+              }}
+            >
+              <FundCard
+                key={uuidv4()}
+                {...grant}
+                handelClick={(e) => {
+                  e.preventDefault()
+                  // router.push({
+                  //   pathname: `/grant-details/${grant.title}`,
+                  //   query: { ...grant },
+                  // })
+                }}
+              />
+            </Link>
           ))}
       </div>
     </div>
